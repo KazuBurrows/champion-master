@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+table, th, td {
+  border: 1px solid black;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding-top: 10%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  /* float: right; */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.tag {
+  background-color: #fff;
+  margin: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* .create_tag_btn {
+
+
+} */
+
+.button5 {
+  /* height: 300px;
+  width: 300px; */
+  border-radius: 50%;
+}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<!-- <style>
+    /* #champion_list {
+        width: 50%;
+        
+    } */
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+</style> -->
+
+
+{% endblock %}
+
+
+
+{% block body %}
+<a href='/admin/'>admin</a>
+<a href='#' onclick="random_champion()">Roll champion</a>
+
+<div id="champion_list">
+
+    
+    <div id="all_champions" class="column">
+        <h3 style="display:inline">All champions</h3>
+        <input id='search_name' autocomplete="off" placeholder='Search by name'>
+        <input id='search_tag' autocomplete="off" placeholder='Search by tag'>
+        <input id='submit_tag_btn' type="submit" placeholder="Search tag">
+        <br>
+        
+        <!-- new way -->
+        <div id="champion_pool"></div>
+
+        <!-- old way -->
+        <!-- {% for champion in champions %}
+        <a onclick="champion_select('{{ champion.id }}')"><img src="{{ champion.icon }}"></img></a>
+        {% endfor %} -->
+    </div>
+    
+   
+    <div id="selected_champions" class="column">
+        <h3>Selected champions</h3>
+
+        <!-- js side -->
+        <div id="selected_pool"></div>
+    </div>
+</div>
+
+    
+
+
+<!-- The Modal -->
+<div id="roll_model" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div id="rolled_champion"></div>
+        
+    </div>
+
+</div>
+
+
+
+{% endblock %}

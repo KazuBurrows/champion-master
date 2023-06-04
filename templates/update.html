@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+
+{% block body %}
+<h1>Update champion</h1>
+<div id='update_champion'>
+    <form action='/update/{{champion.id}}' method='POST'>
+        <input name='champion_name' id='champion_name' placeholder='Name' value={{champion.name}}>
+        <br>
+        <input name='champion_icon' id='champion_icon' placeholder='Icon link' value={{champion.icon}}>
+        <br>
+        <input id='champion_roles' placeholder='Roles' value={{champion.roles}}>
+        <br>
+        <input id='champion_tags' placeholder='Tags' value={{champion.tags}}>
+        <br>
+        <input type='submit' value='Update'>
+    </form>
+</div>
+
+{% endblock %}

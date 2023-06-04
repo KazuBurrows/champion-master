@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+
+<!-- <script>
+
+
+
+</script> -->
+
+{% endblock %}
+
+
+
+{% block body %}
+<div class='content'>
+    <h1>Champions</h1>
+    <a href="https://na.leagueoflegends.com/en/game-info/champions/" target="_blank">https://na.leagueoflegends.com/en/game-info/champions/</a>
+    
+    <div>
+        <button onclick="add_button()">Add champion</button>
+    </div>
+
+    <table>
+        <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>Tags</th>
+            <th>Actions</th>
+        
+        </tr>
+
+        {% for champion in champions %}
+        <tr>
+            <td><img src="{{ champion.icon }}"></img></td>
+            <td>{{ champion.name }}</td>
+            <td><a href="#" onclick="get_tags('{{champion.id}}')">Tags</a></td>
+            <td>
+                <a href='/delete/{{champion.id}}'>Delete</a>
+                <br>
+                <!-- <a href='/update/{{champion.id}}'>Edit</a> -->
+                <a href="#" onclick="update_button('{{ champion.id }}')">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+<!-- The update Modal -->
+<div id="add_model" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="add_close" class="close">&times;</span>
+        <br>
+        <div id='add_champion'>
+            <form action='/add_champion/' method='POST'>
+                <input name='champion_name' id='champion_name' autocomplete="off" placeholder='Name'>
+                <br>
+                <input name='champion_icon' id='champion_icon' autocomplete="off" placeholder='Icon link'>
+                <br>
+                <input type='submit' value='Submit'>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- The update Modal -->
+<div id="update_model" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="update_close" class="close">&times;</span>
+        <br>
+        <br>
+        <div action='/add_champion/' id='update_champion'>
+            <form method='POST'>
+                <input id='update_champion_name' autocomplete="off" placeholder='Name'>
+                <br>
+                <input id='update_champion_icon' autocomplete="off" placeholder='Icon link'value=''>
+                <br>
+                <input id='update_champion' type='submit' value='Update'>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- The tag Modal -->
+<div id="tag_model" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="tag_close" class="close">&times;</span>
+        <br>
+        <br>
+        <div id='tag_champion'>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
